@@ -1,0 +1,101 @@
+# types of artefact's, which are served by this api
+types:
+  coins:
+    # short human readable name
+    label: 'Münzen'
+    finder:
+      class: 'diMuG\Test\FactoryMock'
+      factory: true
+      method: 'getFinder'
+      static: false
+    # list of all fields of this type
+    fields:
+      # field name in the json result
+      authority:
+        # field type (possibilities: string, boolean, integer, float)
+        type: string
+        # human readable name
+        label: 'Prägeherr'
+        # required or not (optional)
+        nullable: true
+      mint:
+        type: string
+        label: 'Prägeort'
+        nullable: true
+    # where to find the pictures for this artefact's
+    pictures:
+      # online or offline source
+      online: true
+      # download dir (optional)
+      url: 'http://www.url.com/pictures'
+      # are the pictures protected or free available (optional)
+      security: true
+      # username (optional)
+      user: 'user'
+      # plain! password (optional)
+      password: 'password'
+    sounds:
+      online: false
+    glossary:
+      class: 'diMuG\Test\GlossaryMock'
+  foo:
+    # short human readable name
+    label: 'bar'
+    finder:
+      class: 'diMuG\Test\FactoryMock'
+      factory: true
+      method: 'createFinder'
+      static: true
+    fields:
+      # field name in the json result
+      authority:
+        # field type (possibilities: string, boolean, integer, float)
+        type: integer
+        # human readable name
+        label: 'Prägeherr'
+        # required or not (optional)
+        nullable: true
+      mint:
+        type: number
+        label: 'Prägeort'
+        nullable: true
+    # where to find the pictures for this artefact's
+    pictures:
+      online: false
+    glossary:
+      class: 'diMuG\Test\GlossaryMock'
+  other:
+    # short human readable name
+    label: 'Something new'
+    finder:
+      # name of the class, which implements the FinderInterface to find artefact's of these type or when you are
+      # using a factory the name of the factory
+      class: 'diMuG\Test\FinderMock'
+      # when you are using a factory to create an instance of your finder object, enable this (optional)
+      factory: false
+      # method of the factory to create a finder object (optional)
+      method: ''
+      # static access to the method (optional)
+      static: false
+    # list of all fields of this type
+    fields:
+      # field name in the json result
+      authority:
+        # field type (possibilities: string, boolean, integer, float)
+        type: boolean
+        # human readable name
+        label: 'Prägeherr'
+        # required or not (optional)
+        nullable: true
+      mint:
+        type: integer
+        label: 'Prägeort'
+        nullable: true
+      location:
+        type: float
+        label: 'Prägeort'
+        nullable: true
+    pictures:
+      online: false
+    glossary:
+      class: 'diMuG\Test\GlossaryMock'

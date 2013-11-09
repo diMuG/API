@@ -1,0 +1,28 @@
+errors:
+  configuration:
+    missing: 'The configuration file is missing!'
+    invalid: 'There is an error in your YAML configuration file! Please fix your configuration file!'
+  type:
+    missing: 'There is no finder for a type with the name "%type%"!'
+  fields:
+    missing: 'There are no fields definded for type "%type%"!'
+  glossary:
+    interface: 'The class to recieve the glossary of the type "%type%" MUST implement the interface "diMuG\API\Interfaces\GlossaryInterface"!'
+  finder:
+    interface: 'The class to find entries of the type "%type%" MUST implement the interface "diMuG\API\Interfaces\FinderInterface"!'
+validation:
+  success: '<info>Your "%file%.yml" is valid!</info>'
+  error:
+    dir: '<error>The config dir is missing!</error>'
+    file: '<error>The "%file%.yml" file is missing!</error>'
+    yaml: '<error>The "%file%.yml" file is not a valid YAML file!</error>'
+    root: '<error>The root key "%key%" is missing in the file "%file%.yml"!</error>'
+    key: '<error>The key "%key%" is missing for the type "%type%" in the file "%file%.yml"!</error>'
+    empty: '<error>The key "%key%" for the type "%type%" in the file "%file%.yml" is empty!</error>'
+    array: '<error>The key "%key%" in the file "%file%.yml" is no array!</error>'
+    class: '<error>The class "%class%", defined for the type "%type%" in the file "%file%.yml" could not be found!</error>'
+    method: '<error>There is no method "%method%" in the class "%class%" for the type "%type%" defined!</error>'
+    static: '<error>The method "%method%" in the class "%class%" of the type "%type%" is not a static method!</error>'
+    interface: '<error>The class "%class%" is not an implementing the interface "diMuG\API\Interfaces\%interface%Interface"!</error>'
+    type: '<error>The field type "%type%" for the field "%field%" in the file "%file%.yml" is not supported! Supported field types are string, boolean, number, integer and float!</error>'
+    boolean: '<error>The value of the field "%field%" in the file "%file%.yml" must be a boolean value!</error>'

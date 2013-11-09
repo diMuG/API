@@ -1,0 +1,13 @@
+# types of artefact's, which are served by this api
+types
+  coins:
+    # short human readable name
+    label: 'Münzen'
+    fields:
+      test:
+        type: 'string'
+        nullable: true
+    finder:
+      class: 'diMuG\Test\FinderMock'
+    glossary:
+      class: 'diMuG\Test\GlossaryMock'

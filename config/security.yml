@@ -1,0 +1,6 @@
+# configuration to access this api
+api:
+  # user name
+  user: 'user'
+  # encrypted password
+  password: 'encrypted password'

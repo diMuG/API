@@ -1,0 +1,66 @@
+# types of artefact's, which are served by this api
+types:
+  # name by which the artefact type will be called over the API
+  coins:
+    # short human readable name
+    label: 'Münzen'
+    finder:
+      # name, including namespace, of the class, which implements the FinderInterface to find artefact's of these type
+      # or when you are using a factory the name of the factory
+      class: 'namespace\to\your\implementation\of\FinderInterface'
+      # when you are using a factory to create an instance of your finder object, enable this (optional)
+      factory: false
+      # method of the factory to create a finder object (optional)
+      method: ''
+      # static access to the method (optional)
+      static: false
+    # list of all fields of this type
+    fields:
+      # field name in the json result returned by our FinderInterface instance
+      authority:
+        # field type (possibilities: string, boolean, integer, float, number [for possible negative numbers])
+        type: string
+        # human readable name
+        label: 'Prägeherr'
+        # required or not (optional)
+        nullable: true
+      mint:
+        type: string
+        label: 'Prägeort'
+        nullable: true
+    # where to find the pictures for this artefact's
+    pictures:
+      # online or offline source
+      online: true
+      # download dir (optional)
+      url: 'http://www.my-museum.de/images/'
+      # are the pictures protected by HTTP-Auth or free available (optional)
+      security: false
+      # username for HTTP-Auth (optional)
+      user: ''
+      # plain! password for HTTP-Auth (optional)
+      password: ''
+    # where to find the sound files (mp3s) for the audio guides for this artefact type (optional!)
+    sounds:
+      # online or offline source
+      online: true
+      # download dir (optional)
+      url: 'http://www.my-museum.de/sounds/'
+      # are the pictures protected by HTTP-Auth or free available (optional)
+      security: false
+      # username for HTTP-Auth (optional)
+      user: ''
+      # plain! password for HTTP-Auth (optional)
+      password: ''
+    glossary:
+      # name, including namespace, of the class, which implements the GlossaryInterface to list glossary entries
+      # or when you are using a factory the name of the factory
+      class: 'namespace\to\your\implementation\of\GlossaryInterface'
+      # when you are using a factory to create an instance of your finder object, enable this (optional)
+      factory: false
+      # method of the factory to create a finder object (optional)
+      method: ''
+      # static access to the method (optional)
+      static: false
+  # an other artefact type. Use the same configuration schema as above
+  #next:

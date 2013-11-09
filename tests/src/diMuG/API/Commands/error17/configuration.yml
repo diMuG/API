@@ -1,0 +1,9 @@
+# types of artefact's, which are served by this api
+types:
+  coins:
+    fields:
+      test:
+        label: 'test'
+        type: 'string'
+    finder:
+      class: 'diMuG\Test\GlossaryMock'

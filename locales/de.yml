@@ -1,0 +1,28 @@
+errors:
+  configuration:
+    missing: 'Es ist keine Konfigurations Datei vorhanden!'
+    invalid: 'Die YAML Konfiugrations Datei ist fehlerhaft! Bitte die YAML Dateien auf Syntaxfehler überprüfen!'
+  type:
+    missing: 'Es ist keine Finder-Klasse für den Artefakt Typ "%type%" vorhanden!'
+  fields:
+    missing: 'Es sind keine Felder für den Artefakt Typ "%type%" angegeben!'
+  glossary:
+    interface: 'Die Klasse für den Zugriff auf das Glossar des Artefakt Typs "%type%" muss das Interface "diMuG\API\Interfaces\GlossaryInterface" implementieren!'
+  finder:
+    interface: 'Die Klasse für zum Finden von Artefakten des Typs "%type%" muss das Interface "diMuG\API\Interfaces\FinderInterface" implementieren!'
+validation:
+  success: '<info>Die Datei "%file%.yml" korrekt formatiert!</info>'
+  error:
+    dir: '<error>Das Verzeichnis "config" ist nicht vorhanden!</error>'
+    file: '<error>Die Datei "%file%.yml" ist nicht vorhanden!</error>'
+    yaml: '<error>Die Datei "%file%.yml" ist keine gültige YAML Datei!</error>'
+    root: '<error>Der Grund-Schlüssel "%key%" ist in der Datei "%file%.yml" nicht vorhanden!</error>'
+    key: '<error>Der Schlüssel "%key%" für den Typ "%type%" ist in der Datei "%file%.yml" nicht vorhanden!</error>'
+    empty: '<error>Der Schlüssel "%key%" für den Typ "%type%" in der Datei "%file%.yml" enthält keinen Wert!</error>'
+    array: '<error>Der Schlüssel "%key%" in der Datei "%file%.yml" ist kein Array!</error>'
+    class: '<error>Die Klasse "%class%", die für den Typ "%type%" in der Datei "%file%.yml" angegeben ist, konnte nicht geladen werden!</error>'
+    method: '<error>Die Methode "%method%" ist in der Klasse "%class%" für den Typ "%type%" nicht implementiert!</error>'
+    static: '<error>Die Methode "%method%" der Klasse "%class%" für den Typ "%type%" ist keine statische Methode, soll aber als solche aufgerufen werden!</error>'
+    interface: '<error>Die Klasse "%class%" implementiert das Interface "diMuG\API\Interfaces\%interface%Interface" nicht!</error>'
+    type: '<error>Der Datei-Typ "%type%" für das Feld "%field%" in der Datei "%file%.yml" ist ungültig! Gültige Feldtypen sind: string, boolean, number, integer und float!</error>'
+    boolean: '<error>Der Wert des Feldes "%field%" in der Datei "%file%.yml" muss ein Boolean (true oder false) sein!</error>'

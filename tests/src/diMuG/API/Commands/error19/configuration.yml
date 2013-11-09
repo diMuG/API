@@ -1,0 +1,9 @@
+# types of artefact's, which are served by this api
+types:
+  coins:
+    # short human readable name
+    label: 'Münzen'
+    finder:
+      class: 'diMuG\Test\FinderMock'
+    glossary:
+      class: 'diMuG\Test\GlossaryMock'

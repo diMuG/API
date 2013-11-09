@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Start a console.
+ *
+ * @author  Benjamin Geißler <benjamin.geissler@gmail.com>
+ * @package diMuG\API
+ * @licence GPL v3
+ */
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Translation\Translator;
+use Symfony\Component\Translation\MessageSelector;
+use Symfony\Component\Translation\Loader\YamlFileLoader;
+use diMuG\API\Commands\ValidateCommand;
+
+// create translation
+$translation = new Translator('en_EN', new MessageSelector());
+$translation->setFallbackLocales(array('en'));
+$translation->addLoader('yaml', new YamlFileLoader());
+$translation->addResource('yaml', __DIR__ . '/../locales/en.yml', 'en');
+$translation->addResource('yaml', __DIR__ . '/../locales/de.yml', 'de');
+
+// configure command
+$validate = new ValidateCommand();
+$validate
+    ->setConfigDir(__DIR__ . '/../config')
+    ->setTranslator($translation);
+
+$application = new Application();
+$application->add($validate);
+$application->run();
