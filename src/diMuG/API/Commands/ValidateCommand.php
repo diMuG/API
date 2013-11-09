@@ -598,4 +598,3 @@ class ValidateCommand extends Command
         return true;
     }
 }
- 

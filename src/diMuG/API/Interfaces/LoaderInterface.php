@@ -54,4 +54,3 @@ interface LoaderInterface
      */
     public function loadGlossary($type);
 }
- 

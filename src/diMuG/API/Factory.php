@@ -82,4 +82,3 @@ class Factory implements FactoryInterface
         return true;
     }
 }
- 

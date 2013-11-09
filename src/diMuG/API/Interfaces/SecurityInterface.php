@@ -22,4 +22,3 @@ interface SecurityInterface
      */
     public static function addFirewall(Application $app, $file);
 }
- 

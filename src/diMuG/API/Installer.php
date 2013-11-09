@@ -39,7 +39,7 @@ class Installer
      * Create a dir, if not already existing.
      * @param $name
      */
-    private static function  createDir($name)
+    private static function createDir($name)
     {
         $dir = __DIR__ . '/' . $name;
         if (file_exists($dir) == false
@@ -74,4 +74,3 @@ class Installer
         }
     }
 }
- 

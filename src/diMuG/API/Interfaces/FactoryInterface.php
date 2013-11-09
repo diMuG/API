@@ -19,4 +19,3 @@ interface FactoryInterface
      */
     public function create(array $config);
 }
- 

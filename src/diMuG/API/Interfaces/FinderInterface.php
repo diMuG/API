@@ -50,4 +50,3 @@ interface FinderInterface
      */
     public function findAll();
 }
- 
