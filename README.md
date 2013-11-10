@@ -20,24 +20,29 @@ This is an sample implementation of an API to provide a data source for diMuG - 
 
 3. Run the additional install script via the console by running the following command:
 ```
-    php vendor/bin/dimug api:install
+    vendor/bin/dimug api:install
 ```
 or if you prefer Deutsch:
 ```
-    php vendor/bin/dimug api:install de
+    vendor/bin/dimug api:install de
 ```
 
 ## How to connect your data source ##
 1. Create a class which implements the **diMuG\APIv1\Interfaces\FinderInterface**.
+
 3. Create a class which implements the **diMuG\APIv1\Interfaces\GlossaryInterface**.
+
 4. Use the PHPUnit test skeleton files in the dir **tests** to test your classes.
 
 5. Edit the configuration files **config/configuration.yml** and **config/security.yml** so that they represent your
 data. Use the following console command to test your configuration files:
 ```
-    php vendor/bin/dimug api:validate
+    vendor/bin/dimug api:validate
 ```
 or if you prefer Deutsch:
 ```
-    php vendor/bin/dimug api:validate de
+    vendor/bin/dimug api:validate de
 ```
+
+6. If everything is working, upload your files to your webserver and point your web-root to **web**. For further 
+configuration details look into the [silex documenation](http://silex.sensiolabs.org/doc/web_servers.html "silex documenation").
