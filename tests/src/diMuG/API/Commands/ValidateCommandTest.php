@@ -22,7 +22,6 @@ class ValidateCommandTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp($dir = '', array $options = array())
     {
-
         $translation = new Translator('en_EN', new MessageSelector());
         $translation->setFallbackLocales(array('en'));
         $translation->addLoader('yaml', new YamlFileLoader());

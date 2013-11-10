@@ -26,3 +26,12 @@ validation:
     interface: '<error>The class "%class%" is not an implementing the interface "diMuG\API\Interfaces\%interface%Interface"!</error>'
     type: '<error>The field type "%type%" for the field "%field%" in the file "%file%.yml" is not supported! Supported field types are string, boolean, number, integer and float!</error>'
     boolean: '<error>The value of the field "%field%" in the file "%file%.yml" must be a boolean value!</error>'
+install:
+  success: '<info>All files have been copied!</info>'
+  dir:
+    create: '<error>Could not create dir "%dir%" in project root!</error>'
+    exists: '<error>The dir "%dir%" does not exist!</error>'
+  file:
+    missing: '<error>The source file "%source%/%file%" is missing!</error>'
+    exists: '<info>The target file "%target%/%file%" already exists! File skipped!</info>'
+    error: '<error>The source file "%source%/%file%" could not be copied to "%target%/%file%"!</error>'

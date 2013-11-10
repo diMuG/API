@@ -26,3 +26,12 @@ validation:
     interface: '<error>Die Klasse "%class%" implementiert das Interface "diMuG\API\Interfaces\%interface%Interface" nicht!</error>'
     type: '<error>Der Datei-Typ "%type%" für das Feld "%field%" in der Datei "%file%.yml" ist ungültig! Gültige Feldtypen sind: string, boolean, number, integer und float!</error>'
     boolean: '<error>Der Wert des Feldes "%field%" in der Datei "%file%.yml" muss ein Boolean (true oder false) sein!</error>'
+install:
+  success: '<info>Alle Dateien wurden kopiert!</info>'
+  dir:
+    create: '<error>Das Verzeichnis "%dir%" im Projekt-Wurzel-Verzeichnis konnte nicht erstellt werden!</error>'
+    exists: '<error>Das Verzeichnis "%dir%" ist nicht vorhanden!</error>'
+  file:
+    missing: '<error>Die Quell-Datei "%source%/%file%" ist nicht vorhanden!</error>'
+    exists: '<info>Die Ziel-Datei "%target%/%file%" ist bereits vorhanden! Der Kopier-Vorgang wurde übersprungen!</info>'
+    error: '<error>Die Quell-Datei "%source%/%file%" konnte nicht nach "%target%/%file%" kopiert werden!</error>'

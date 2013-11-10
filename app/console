@@ -14,6 +14,7 @@ use Symfony\Component\Translation\Translator;
 use Symfony\Component\Translation\MessageSelector;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
 use diMuG\API\Commands\ValidateCommand;
+use diMuG\API\Commands\InstallCommand;
 
 // create translation
 $translation = new Translator('en_EN', new MessageSelector());
@@ -28,6 +29,44 @@ $validate
     ->setConfigDir(__DIR__ . '/../config')
     ->setTranslator($translation);
 
+// install command
+$install = new InstallCommand();
+$install
+    ->setTranslator($translation)
+    ->setInstalls(
+        array(
+            array(
+                'target' => __DIR__ . '/../app',
+                'source' => __DIR__ . '/../vendor/dmiug/api/app',
+                'files'  => array('console')
+            ),
+            array(
+                'target' => __DIR__ . '/../config',
+                'source' => __DIR__ . '/../vendor/dmiug/api/config',
+                'files'  => array('configuration.yml', 'security.yml')
+            ),
+            array(
+                'target' => __DIR__ . '/../locales',
+                'source' => __DIR__ . '/../vendor/dmiug/api/locales',
+                'files'  => array('en.yml', 'de.yml')
+            ),
+            array(
+                'target' => __DIR__ . '/../log'
+            ),
+            array(
+                'target' => __DIR__ . '/../tests',
+                'source' => __DIR__ . '/../vendor/dmiug/api/tests/skeleton',
+                'files'  => array('FinderInterfaceTest.php', 'GlossaryInterfaceTest.php')
+            ),
+            array(
+                'target' => __DIR__ . '/../web',
+                'source' => __DIR__ . '/../vendor/dmiug/api/web',
+                'files'  => array('api.php')
+            )
+        )
+    );
+
 $application = new Application();
 $application->add($validate);
+$application->add($install);
 $application->run();
