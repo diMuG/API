@@ -7,7 +7,7 @@
  * @package diMuG\API
  * @licence GPL v3
  */
-require_once __DIR__ . '/../autoload.php';
+require_once __DIR__ . '/../../../autoload.php';
 
 use Symfony\Component\Console\Application;
 use Symfony\Component\Translation\Translator;
@@ -36,26 +36,26 @@ $install
     ->setInstalls(
         array(
             array(
-                'target' => __DIR__ . '/../config',
-                'source' => __DIR__ . '/../vendor/dmiug/api/config',
+                'target' => __DIR__ . '/../../../../config',
+                'source' => __DIR__ . '/../config',
                 'files'  => array('configuration.yml', 'security.yml')
             ),
             array(
-                'target' => __DIR__ . '/../locales',
-                'source' => __DIR__ . '/../vendor/dmiug/api/locales',
+                'target' => __DIR__ . '/../../../../locales',
+                'source' => __DIR__ . '/../locales',
                 'files'  => array('en.yml', 'de.yml')
             ),
             array(
-                'target' => __DIR__ . '/../log'
+                'target' => __DIR__ . '/../../../../log'
             ),
             array(
-                'target' => __DIR__ . '/../tests',
-                'source' => __DIR__ . '/../vendor/dmiug/api/tests/skeleton',
+                'target' => __DIR__ . '/../../../../tests',
+                'source' => __DIR__ . '/../tests/skeleton',
                 'files'  => array('FinderInterfaceTest.php', 'GlossaryInterfaceTest.php')
             ),
             array(
-                'target' => __DIR__ . '/../web',
-                'source' => __DIR__ . '/../vendor/dmiug/api/web',
+                'target' => __DIR__ . '/../../../../web',
+                'source' => __DIR__ . '/../web',
                 'files'  => array('api.php')
             )
         )
