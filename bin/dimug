@@ -7,7 +7,7 @@
  * @package diMuG\API
  * @licence GPL v3
  */
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../autoload.php';
 
 use Symfony\Component\Console\Application;
 use Symfony\Component\Translation\Translator;
@@ -35,11 +35,6 @@ $install
     ->setTranslator($translation)
     ->setInstalls(
         array(
-            array(
-                'target' => __DIR__ . '/../app',
-                'source' => __DIR__ . '/../vendor/dmiug/api/app',
-                'files'  => array('console')
-            ),
             array(
                 'target' => __DIR__ . '/../config',
                 'source' => __DIR__ . '/../vendor/dmiug/api/config',
