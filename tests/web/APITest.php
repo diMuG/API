@@ -300,10 +300,12 @@ class APITest extends WebTestCase
      */
     public function createApplication()
     {
+        ob_start();
         require __DIR__ . '/../../web/api.php';
+        ob_clean();
 
         /** @var Application $app */
-        $app['debug'] = true;
+        $app['debug'] = false;
         $app['exception_handler']->disable();
         $app['security.active']               = true;
         $app['parameters.file.configuration'] = __DIR__ . '/../config/configuration.yml';
